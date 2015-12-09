@@ -72,10 +72,6 @@ for g in graphs :
     nums.append(g.n)
 
 
-print nums
-print times.get("kruskal")
-print times.get("prim")
-
 plt.plot(nums,times.get("prim"),'r',label="Prim")
 plt.plot(nums,times.get("kruskal"),'b',label="Kruskal")
 plt.legend()

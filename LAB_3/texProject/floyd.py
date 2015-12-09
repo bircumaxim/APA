@@ -47,10 +47,6 @@ vertices = []
 timesF = []
 timesD = []
 
-print vertices
-print timesF
-print timesD
-
 for n in range(4,40):
     vertices.append(n)
     w = generateRandomGraph(n)
