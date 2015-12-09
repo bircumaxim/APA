@@ -1,3 +1,25 @@
+import sys
+INF = sys.maxint
+#KRUSKCAL
+#######################################################################
+def kruskal(graph):
+    #connected verticies
+    connected = []
+    #selected edges
+    selected = []
+    i = 0
+    while (len(connected) != graph.n) and (i < len(graph.data)):
+        e = graph.data[i]
+        a = contains(connected,e.a) == -1
+        b = contains(connected,e.b) == -1
+        if (a != b) or len(connected) == 0:
+            addIfNotExists(connected,e.a)
+            addIfNotExists(connected,e.b)
+            selected.append(e)
+        i += 1
+    return selected
+#######################################################################
+
 def addIfNotExists(arr,el):
     for i in arr:
         if i == el:
