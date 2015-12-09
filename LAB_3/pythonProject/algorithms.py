@@ -20,6 +20,30 @@ def kruskal(graph):
     return selected
 #######################################################################
 
+#KRUSKAL PRIM
+#######################################################################
+def prim(graph):
+    #add 1 as connected !
+    connected = [1]
+    #selected edges
+    selected = []
+    edges = graph.data
+    while len(connected) != graph.n:
+        for e in edges:
+            a = contains(connected,e.a)
+            b = contains(connected,e.b)
+            if ((a == -1 and b != -1)) or (b == -1 and a != -1):
+                if a == -1:
+                    connected.append(e.a)
+                else:
+                    connected.append(e.b)
+                selected.append(e)
+                edges.remove(e)
+                break
+
+    return selected
+#######################################################################
+
 def addIfNotExists(arr,el):
     for i in arr:
         if i == el:
